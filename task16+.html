@@ -1,0 +1,39 @@
+<!--
+16. 
+Сделайте так, чтобы по клику мышкой на экране в этом месте появлялось число уже сделанных кликов (1, 2, 3 и так далее).
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>16</title>
+    <script src="jquery-3.1.1.js"></script>
+    <style type="text/css">
+        html,
+        body {
+          width: 100%;
+          height: 100%;
+          margin: 0px;
+          padding: 0px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            var count=0;
+            $('body').click(function(event) {
+                count++;
+                $("body").append("<span>"+count+"</span>");
+                $("body span:last").css({"position": "absolute","top": event.pageY,"left": event.pageX});
+                /*        $("<span/>").text(count).css({"position": "absolute",
+                            left: event.pageX,
+                            top: event.pageY
+                            }).appendTo("body"); */
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <!--Разметка-->
+
+</body>
+</html>
